@@ -1,3 +1,7 @@
 export default function Home() {
-  return <div>SAAS</div>;
+  return (
+    <div>
+      <h1>SAAS</h1>
+    </div>
+  );
 }
