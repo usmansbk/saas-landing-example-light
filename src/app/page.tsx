@@ -1,10 +1,9 @@
-import Bar from "@/components/Bar";
+import Header from "./sections/Header";
 
 export default function Home() {
   return (
-    <div>
-      <Bar />
-      <h1>SAAS</h1>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }

@@ -11,6 +11,10 @@ export default {
       fontFamily: {
         dm: ["var(--font-dm)"],
       },
+      container: {
+        padding: "1rem",
+        center: true,
+      },
     },
   },
   plugins: [],
