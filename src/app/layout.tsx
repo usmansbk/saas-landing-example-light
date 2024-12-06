@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
+
+const dm = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dm",
+});
 
 export const metadata: Metadata = {
   title: "SaaS Website UI Kit",
@@ -13,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`${dm.variable} antialiased`}>{children}</body>
     </html>
   );
 }
