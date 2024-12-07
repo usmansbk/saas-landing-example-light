@@ -1,3 +1,4 @@
+"use client";
 import avatar1 from "@/assets/avatars/avatar-1.png";
 import avatar2 from "@/assets/avatars/avatar-2.png";
 import avatar3 from "@/assets/avatars/avatar-3.png";
@@ -9,6 +10,8 @@ import avatar8 from "@/assets/avatars/avatar-8.png";
 import avatar9 from "@/assets/avatars/avatar-9.png";
 import clsx from "clsx";
 import Image from "next/image";
+import { motion } from "motion/react";
+import { Fragment } from "react";
 
 const testimonials = [
   {
@@ -74,37 +77,53 @@ const thirdColumn = testimonials.slice(6, 9);
 interface TestimonialsColumnProps {
   testimonials: typeof testimonials;
   className?: string;
+  duration?: number;
 }
 
 function TestimonialsColumn({
   testimonials,
   className,
+  duration,
 }: TestimonialsColumnProps) {
   return (
-    <div
-      className={clsx(
-        "flex flex-col gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)]",
-        className
-      )}
-    >
-      {testimonials.map(({ text, imageSrc, name, username }) => (
-        <div key={text} className="card">
-          <div>{text}</div>
-          <div className="flex items-center gap-2 mt-5">
-            <Image
-              src={imageSrc}
-              alt={name}
-              height={40}
-              width={40}
-              className="h-10 w-10 rounded-full"
-            />
-            <div className="flex flex-col">
-              <div className="font-medium tracking-tight leading-5">{name}</div>
-              <div className="leading-5 tracking-tight">{username}</div>
-            </div>
-          </div>
-        </div>
-      ))}
+    <div className={className}>
+      <motion.div
+        animate={{
+          translateY: "-50%",
+        }}
+        transition={{
+          duration: duration ?? 20,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+        className="flex flex-col gap-6 pb-6"
+      >
+        {[...new Array(2)].fill(0).map((_, index) => (
+          <Fragment key={index}>
+            {testimonials.map(({ text, imageSrc, name, username }) => (
+              <div key={text} className="card">
+                <div>{text}</div>
+                <div className="flex items-center gap-2 mt-5">
+                  <Image
+                    src={imageSrc}
+                    alt={name}
+                    height={40}
+                    width={40}
+                    className="h-10 w-10 rounded-full"
+                  />
+                  <div className="flex flex-col">
+                    <div className="font-medium tracking-tight leading-5">
+                      {name}
+                    </div>
+                    <div className="leading-5 tracking-tight">{username}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Fragment>
+        ))}
+      </motion.div>
     </div>
   );
 }
@@ -123,15 +142,17 @@ export default function Testimonials() {
             essential tool for users around the world.
           </p>
         </div>
-        <div className="flex justify-center gap-6">
-          <TestimonialsColumn testimonials={firstColumn} />
+        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
+          <TestimonialsColumn testimonials={firstColumn} duration={20} />
           <TestimonialsColumn
             testimonials={secondColumn}
-            className="hidden md:flex"
+            className="hidden md:block"
+            duration={24}
           />
           <TestimonialsColumn
             testimonials={thirdColumn}
-            className="hidden lg:flex"
+            className="hidden lg:block"
+            duration={22}
           />
         </div>
       </div>
