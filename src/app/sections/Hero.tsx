@@ -35,6 +35,15 @@ export default function Hero() {
               src={cogImage.src}
               alt="Cog image"
               className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
+              animate={{
+                translateY: [-30, 30],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
             />
             <Image
               src={cylinderImage}
