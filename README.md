@@ -1,5 +1,7 @@
 # SaaS Website UI Kit
 
+![screenshot](./screenshot.png)
+
 ## Tools
 
 - [NextJS](https://nextjs.org/)
