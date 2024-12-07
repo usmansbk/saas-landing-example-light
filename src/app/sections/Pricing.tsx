@@ -77,7 +77,7 @@ export default function Pricing() {
               <div
                 key={title}
                 className={clsx(
-                  "p-10 rounded-3xl shadow-[0_7px_14px_#eaeaea] max-w-xs w-full",
+                  "card",
                   inverse && "bg-black text-white border-black"
                 )}
               >
