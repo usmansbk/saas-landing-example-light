@@ -8,7 +8,7 @@
 
 ## Live Link
 
-- [Vercel]()
+- [Vercel](https://saas-landing-example-light-v92l.vercel.app/)
 
 ## Design
 
