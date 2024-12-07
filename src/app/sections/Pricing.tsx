@@ -1,5 +1,7 @@
+"use client";
 import CheckIcon from "@/assets/icons/check.svg";
 import clsx from "clsx";
+import { motion } from "motion/react";
 
 const pricingTiers = [
   {
@@ -96,9 +98,20 @@ export default function Pricing() {
                       popular ? "inline-flex" : "hidden"
                     )}
                   >
-                    <span className="bg-[linear-gradient(to_right,#dd7ddf,#e1cd86,#bbcb92,#71c2ef,#3bffff,#dd7ddf)] text-transparent bg-clip-text font-medium">
+                    <motion.span
+                      animate={{
+                        backgroundPositionX: "-100%",
+                      }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 1,
+                        ease: "linear",
+                        repeatType: "loop",
+                      }}
+                      className="bg-[linear-gradient(to_right,#dd7ddf,#e1cd86,#bbcb92,#71c2ef,#3bffff,#dd7ddf,#e1cd86,#bbcb92,#71c2ef,#3bffff)] [background-size:200%] text-transparent bg-clip-text font-medium"
+                    >
                       Popular
-                    </span>
+                    </motion.span>
                   </div>
                 </div>
                 <div className="flex items-baseline gap-1 mt-[30px]">
