@@ -8,7 +8,6 @@ import avatar6 from "@/assets/avatars/avatar-6.png";
 import avatar7 from "@/assets/avatars/avatar-7.png";
 import avatar8 from "@/assets/avatars/avatar-8.png";
 import avatar9 from "@/assets/avatars/avatar-9.png";
-import clsx from "clsx";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Fragment } from "react";
