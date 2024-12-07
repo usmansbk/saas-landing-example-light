@@ -1,8 +1,11 @@
+"use client";
+
 import ArrowRight from "@/assets/icons/arrow-right.svg";
 import cogImage from "@/assets/images/cog.png";
 import cylinderImage from "@/assets/images/cylinder.png";
 import noodleImage from "@/assets/images/noodle.png";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export default function Hero() {
   return (
@@ -28,8 +31,8 @@ export default function Hero() {
             </div>
           </div>
           <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative">
-            <Image
-              src={cogImage}
+            <motion.img
+              src={cogImage.src}
               alt="Cog image"
               className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0"
             />
